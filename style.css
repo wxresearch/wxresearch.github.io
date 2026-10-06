@@ -1,0 +1,456 @@
+/* ------------------------------
+   Base
+------------------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #faf9f6;
+  color: #171717;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+
+/* ------------------------------
+   Navigation
+------------------------------ */
+
+.site-header {
+  background: rgba(250, 249, 246, 0.92);
+  border-bottom: 1px solid #e8e5df;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+}
+
+.nav-container {
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #171717;
+  border-radius: 50%;
+
+  font-family: Georgia, serif;
+  font-weight: bold;
+
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #111;
+}
+
+
+/* ------------------------------
+   Hero
+------------------------------ */
+
+.hero {
+  padding: 130px 0 120px;
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+
+  color: #6f6a61;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+
+  font-size: clamp(60px, 9vw, 105px);
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+}
+
+.hero-description {
+  max-width: 680px;
+
+  margin: 36px 0 36px;
+
+  color: #555;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.6;
+}
+
+.button {
+  display: inline-block;
+
+  padding: 12px 0;
+
+  border-bottom: 1px solid #171717;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+
+/* ------------------------------
+   Sections
+------------------------------ */
+
+.section {
+  padding: 100px 0;
+
+  border-top: 1px solid #e2dfd8;
+}
+
+.section-heading {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 60px;
+
+  margin-bottom: 55px;
+}
+
+.section-heading h2,
+.about-grid h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 44px;
+  font-weight: 400;
+
+  letter-spacing: -0.025em;
+}
+
+.section-intro {
+  max-width: 440px;
+
+  margin: 30px 0 0;
+
+  color: #666;
+
+  font-size: 16px;
+}
+
+
+/* ------------------------------
+   Research Cards
+------------------------------ */
+
+.research-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+.card {
+  min-height: 430px;
+
+  padding: 32px;
+
+  background: #ffffff;
+
+  border: 1px solid #e3e0d9;
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.featured-card {
+  background: #f1efe8;
+}
+
+.card-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 50px;
+}
+
+.status {
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.published {
+  background: #dfe8dc;
+  color: #31492e;
+}
+
+.progress {
+  background: #ece7db;
+  color: #72634d;
+}
+
+.number {
+  color: #aaa;
+
+  font-family: Georgia, serif;
+  font-size: 15px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 18px;
+}
+
+.tags span {
+  color: #777;
+
+  font-size: 12px;
+}
+
+.tags span:not(:last-child)::after {
+  content: " ·";
+}
+
+.card h3 {
+  margin: 0 0 20px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+
+  line-height: 1.25;
+}
+
+.card h3 a {
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.card > p {
+  margin: 0;
+
+  color: #666;
+
+  font-size: 15px;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #888;
+
+  font-size: 13px;
+}
+
+.read-link {
+  color: #171717;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.coming-soon {
+  color: #aaa;
+}
+
+
+/* ------------------------------
+   About
+------------------------------ */
+
+.about-section {
+  background: #171717;
+  color: #f5f3ed;
+}
+
+.about-section .eyebrow {
+  color: #aaa69c;
+}
+
+.about-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+}
+
+.about-text {
+  color: #cac6bc;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 18px;
+}
+
+.about-text p:first-child {
+  margin-top: 0;
+}
+
+
+/* ------------------------------
+   Footer
+------------------------------ */
+
+footer {
+  background: #171717;
+  color: #777;
+
+  border-top: 1px solid #333;
+}
+
+.footer-content {
+  padding: 30px 0;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 12px;
+}
+
+
+/* ------------------------------
+   Mobile
+------------------------------ */
+
+@media (max-width: 750px) {
+
+  .container {
+    width: min(100% - 32px, 1100px);
+  }
+
+  .hero {
+    padding: 95px 0 85px;
+  }
+
+  .hero h1 {
+    font-size: 58px;
+  }
+
+  .hero-description {
+    font-size: 19px;
+  }
+
+  .section {
+    padding: 75px 0;
+  }
+
+  .section-heading,
+  .about-grid,
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    gap: 5px;
+  }
+
+  .about-grid {
+    gap: 40px;
+  }
+
+  .card {
+    min-height: 390px;
+  }
+
+  nav {
+    gap: 18px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+}
