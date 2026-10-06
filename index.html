@@ -5,95 +5,235 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="Independent research and writing by Winnie Xiong in mathematics, science, engineering, and technology."
+  >
+
   <title>Winnie Xiong | Research & Writing</title>
 
-  <style>
-    body {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #222;
-    }
-
-    h1 {
-      font-size: 42px;
-      margin-bottom: 5px;
-    }
-
-    .subtitle {
-      color: #666;
-      font-size: 18px;
-    }
-
-    h2 {
-      margin-top: 50px;
-    }
-
-    .article {
-      margin: 30px 0;
-    }
-
-    .article h3 {
-      margin-bottom: 5px;
-    }
-
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .topic {
-      color: #777;
-      font-size: 14px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <h1>Winnie Xiong</h1>
+  <header class="site-header">
+    <div class="container nav-container">
 
-  <p class="subtitle">
-    Independent research and writing in mathematics, science, and technology.
-  </p>
+      <a class="logo" href="index.html">WX</a>
 
-  <h2>Research</h2>
+      <nav>
+        <a href="#research">Research</a>
+        <a href="#about">About</a>
+      </nav>
 
-  <div class="article">
+    </div>
+  </header>
 
-    <h3>
-      <a href="#">
-        Why Is Mathematics So Effective at Describing the Physical Universe?
-      </a>
-    </h3>
 
-    <p>
-      From planetary motion to quantum mechanics, mathematical ideas often
-      describe the physical world with remarkable accuracy. Why does mathematics
-      work so well in physics? Is mathematics something we discover in nature,
-      or a language humans have created to describe patterns we observe?
-    </p>
+  <main>
 
-    <p class="topic">
-      Mathematics · Physics · Philosophy of Science · Coming Soon
-    </p>
+    <!-- HERO -->
 
-  </div>
+    <section class="hero">
+      <div class="container hero-content">
 
-  <h2>About</h2>
+        <p class="eyebrow">Independent Research & Writing</p>
 
-  <p>
-    I use this site to explore questions that interest me through research,
-    mathematics, evidence, and writing. My goal is not simply to summarize
-    information, but to examine different explanations and understand what
-    the evidence allows us to conclude.
-  </p>
+        <h1>
+          Winnie Xiong
+        </h1>
+
+        <p class="hero-description">
+          Exploring questions in mathematics, science, engineering,
+          and technology through evidence, reasoning, and writing.
+        </p>
+
+        <a class="button" href="#research">
+          Explore my research ↓
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- RESEARCH -->
+
+    <section class="section" id="research">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <p class="eyebrow">Selected Writing</p>
+            <h2>Research & Ideas</h2>
+          </div>
+
+          <p class="section-intro">
+            Questions I find interesting, investigated through research,
+            evidence, and analysis.
+          </p>
+
+        </div>
+
+
+        <div class="research-grid">
+
+          <!-- BIOMIMICRY ARTICLE -->
+
+          <article class="card featured-card">
+
+            <div class="card-top">
+
+              <span class="status published">
+                Published
+              </span>
+
+              <span class="number">
+                01
+              </span>
+
+            </div>
+
+            <div class="tags">
+              <span>Engineering</span>
+              <span>Biomimicry</span>
+              <span>Evolution</span>
+            </div>
+
+            <h3>
+              <a href="articles/biomimicry.html">
+                Should Engineers Copy Nature—or Try to Outperform It?
+              </a>
+            </h3>
+
+            <p>
+              Evolution has produced wings, fins, adhesive feet, and
+              remarkably efficient biological structures. But does that
+              mean nature always has the best engineering solution?
+            </p>
+
+            <div class="card-footer">
+
+              <span>6 min read</span>
+
+              <a
+                class="read-link"
+                href="articles/biomimicry.html"
+              >
+                Read article →
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- MATHEMATICS ARTICLE -->
+
+          <article class="card">
+
+            <div class="card-top">
+
+              <span class="status progress">
+                In progress
+              </span>
+
+              <span class="number">
+                02
+              </span>
+
+            </div>
+
+            <div class="tags">
+              <span>Mathematics</span>
+              <span>Physics</span>
+              <span>Philosophy</span>
+            </div>
+
+            <h3>
+              Why Is Mathematics So Effective at Describing the Physical Universe?
+            </h3>
+
+            <p>
+              From planetary motion to quantum mechanics, mathematical ideas
+              describe the physical world with surprising accuracy. Why does
+              mathematics work so well?
+            </p>
+
+            <div class="card-footer">
+
+              <span>Researching now</span>
+
+              <span class="coming-soon">
+                Coming soon
+              </span>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="section about-section" id="about">
+
+      <div class="container about-grid">
+
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Learning by asking better questions.</h2>
+        </div>
+
+        <div class="about-text">
+
+          <p>
+            I use this site to explore questions that interest me across
+            mathematics, science, engineering, and technology.
+          </p>
+
+          <p>
+            Rather than simply summarizing information, I try to understand
+            how different explanations fit together, what evidence supports
+            them, where uncertainty remains, and what conclusions can
+            reasonably be drawn.
+          </p>
+
+          <p>
+            This site is an evolving collection of those investigations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <p>
+        © 2026 Winnie Xiong
+      </p>
+
+      <p>
+        Research · Questions · Ideas
+      </p>
+
+    </div>
+
+  </footer>
 
 </body>
 
