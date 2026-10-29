@@ -13,6 +13,21 @@
   <title>Winnie Xiong | Research & Writing</title>
 
   <link rel="stylesheet" href="style.css">
+  <style>
+    .article-card-details {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .article-card-views {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #888;
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <script
   data-goatcounter="https://wxresearch.goatcounter.com/count"
@@ -120,7 +135,18 @@
 
             <div class="card-footer">
 
-              <span>6 min read</span>
+              <span class="article-card-details">
+                <span>6 min read</span>
+                <span class="article-card-views" id="biomimicry-home-views" hidden>
+                  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" stroke-width="1.7"
+                       stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <span id="biomimicry-home-count"></span>
+                </span>
+              </span>
 
               <a
                 class="read-link"
@@ -239,6 +265,25 @@
 
   </footer>
 
+  <script>
+    window.addEventListener("load", async function () {
+      const wrapper = document.getElementById("biomimicry-home-views");
+      const counter = document.getElementById("biomimicry-home-count");
+      try {
+        const articlePath = "/articles/biomimicry.html";
+        const endpoint = "https://wxresearch.goatcounter.com/counter/" +
+          encodeURIComponent(articlePath) + ".json";
+        const response = await fetch(endpoint);
+        if (!response.ok) throw new Error("View count unavailable");
+        const data = await response.json();
+        if (data.count == null) throw new Error("Missing view count");
+        counter.textContent = data.count + " views";
+        wrapper.hidden = false;
+      } catch (error) {
+        // Keep the card clean if the public counter is unavailable.
+      }
+    });
+  </script>
 </body>
 
 </html>
