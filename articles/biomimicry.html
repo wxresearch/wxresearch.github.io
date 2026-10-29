@@ -83,15 +83,17 @@
     }
     
     .article-views {
-      margin-top: 12px;
-      
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin: 12px 0 0;
       color: #888;
-      
       font-size: 13px;
+      line-height: 1.5;
     }
 
-    .article-views span {
-      margin-right: 4px;
+    .article-views svg {
+      flex: none;
     }
 
     .article-body {
@@ -246,9 +248,14 @@
           Winnie Xiong · 6 min read ·
           <time datetime="2026-10-05">October 5, 2026</time>
         </p>
-        <p class="article-views">
-          <span aria-hidden="true">◉</span>
-          <span id="article-views-count">Loading views...</span>
+        <p class="article-views" aria-label="Article page views">
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="1.7"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+            <circle cx="12" cy="12" r="3"></circle>
+          </svg>
+          <span id="article-views-count">— views</span>
         </p>
       </div>
 
@@ -680,12 +687,21 @@
   </script>
   
   <script>
-    window.addEventListener("load", function () {
-      if (window.goatcounter?.visit_count) {
-        goatcounter.visit_count({
-          append: "#article-views-count",
-          no_branding: true
-        });
+    window.addEventListener("load", async function () {
+      const counter = document.getElementById("article-views-count");
+      if (!counter) return;
+
+      try {
+        const path = window.goatcounter?.get_data?.().p || window.location.pathname;
+        const endpoint = "https://wxresearch.goatcounter.com/counter/" +
+          encodeURIComponent(path) + ".json";
+        const response = await fetch(endpoint);
+        if (!response.ok) throw new Error("View count unavailable");
+        const data = await response.json();
+        if (data.count == null) throw new Error("Missing view count");
+        counter.textContent = data.count + " views";
+      } catch (error) {
+        counter.closest(".article-views").hidden = true;
       }
     });
   </script>
