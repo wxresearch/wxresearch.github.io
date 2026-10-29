@@ -81,6 +81,18 @@
 
       font-size: 13px;
     }
+    
+    .article-views {
+      margin-top: 12px;
+      
+      color: #888;
+      
+      font-size: 13px;
+    }
+
+    .article-views span {
+      margin-right: 4px;
+    }
 
     .article-body {
       padding: 75px 0 110px;
@@ -234,7 +246,10 @@
           Winnie Xiong · 6 min read ·
           <time datetime="2026-10-05">October 5, 2026</time>
         </p>
-
+        <p class="article-views">
+          <span aria-hidden="true">◉</span>
+          <span id="article-views-count">Loading views...</span>
+        </p>
       </div>
 
     </header>
@@ -658,7 +673,22 @@
     </div>
 
   </footer>
-
+    <script
+    data-goatcounter="https://wxresearch.goatcounter.com/count"
+    async
+    src="https://gc.zgo.at/count.js">
+  </script>
+  
+  <script>
+    window.addEventListener("load", function () {
+      if (window.goatcounter?.visit_count) {
+        goatcounter.visit_count({
+          append: "#article-views-count",
+          no_branding: true
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>
