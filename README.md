@@ -1,2 +1,2 @@
 # wxresearch.github.io
-Independent research and writing in science
+Independent research and writing in science.
