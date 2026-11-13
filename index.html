@@ -166,8 +166,8 @@
 
             <div class="card-top">
 
-              <span class="status progress">
-                In progress
+              <span class="status published">
+                Published
               </span>
 
               <span class="number">
@@ -179,11 +179,13 @@
             <div class="tags">
               <span>Mathematics</span>
               <span>Physics</span>
-              <span>Philosophy</span>
+              <span>Philosophy of Science</span>
             </div>
 
             <h3>
-              Why Is Mathematics So Effective at Describing the Physical Universe?
+              <a href="articles/mathematics.html">
+                Why Is Mathematics So Effective at Describing the Physical Universe?
+              </a>
             </h3>
 
             <p>
@@ -194,11 +196,22 @@
 
             <div class="card-footer">
 
-              <span>Researching now</span>
-
-              <span class="coming-soon">
-                Coming soon
+              <span class="article-card-details">
+                <span>14 min read</span>
+                <span class="article-card-views" id="mathematics-home-views" hidden>
+                  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24"
+                       fill="none" stroke="currentColor" stroke-width="1.7"
+                       stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                  <span id="mathematics-home-count"></span>
+                </span>
               </span>
+
+              <a class="read-link" href="articles/mathematics.html">
+                Read article →
+              </a>
 
             </div>
 
@@ -271,6 +284,23 @@
       const counter = document.getElementById("biomimicry-home-count");
       try {
         const articlePath = "/articles/biomimicry.html";
+        const endpoint = "https://wxresearch.goatcounter.com/counter/" +
+          encodeURIComponent(articlePath) + ".json";
+        const response = await fetch(endpoint);
+        if (!response.ok) throw new Error("View count unavailable");
+        const data = await response.json();
+        if (data.count == null) throw new Error("Missing view count");
+        counter.textContent = data.count + " views";
+        wrapper.hidden = false;
+      } catch (error) {
+        // Keep the card clean if the public counter is unavailable.
+      }
+    });
+    window.addEventListener("load", async function () {
+      const wrapper = document.getElementById("mathematics-home-views");
+      const counter = document.getElementById("mathematics-home-count");
+      try {
+        const articlePath = "/articles/mathematics.html";
         const endpoint = "https://wxresearch.goatcounter.com/counter/" +
           encodeURIComponent(articlePath) + ".json";
         const response = await fetch(endpoint);
